@@ -92,8 +92,9 @@ export default function About() {
               <Image 
                 src="/images/user.jpg" 
                 alt="Profile"
-                fill
-                className="object-cover transition-transform duration-500 group-hover:scale-110"
+                width={1000}
+                height={1000}
+                className="object-cover h-full w-full transition-transform duration-500 group-hover:scale-110"
                 priority
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
