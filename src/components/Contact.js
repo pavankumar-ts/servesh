@@ -17,7 +17,7 @@ export default function Contact() {
         <section id="contact" className="py-20 relative overflow-hidden">
             {/* Background Elements */}
             <div className="absolute inset-0 -z-10">
-                <div className="absolute top-20 left-10 w-72 h-72 bg-pink-600/20 rounded-full filter blur-3xl animate-float" />
+                <div className="absolute top-20 left-10 w-72 h-72 bg-red-600/20 rounded-full filter blur-3xl animate-float" />
                 <div className="absolute bottom-20 right-10 w-72 h-72 bg-blue-600/20 rounded-full filter blur-3xl animate-float" />
             </div>
 
@@ -33,32 +33,32 @@ export default function Contact() {
                             <h3 className="text-2xl font-semibold mb-6">Contact Information</h3>
                             <div className="space-y-4">
                                 <div className="flex items-center space-x-4">
-                                    <div className="w-12 h-12 rounded-full bg-pink-500/20 flex items-center justify-center">
-                                        <i className="fas fa-envelope text-pink-500"></i>
+                                    <div className="w-12 h-12 rounded-full bg-red-500/20 flex items-center justify-center">
+                                        <i className="fas fa-envelope text-red-500"></i>
                                     </div>
                                     <div>
                                         <p className="text-gray-400">Email</p>
-                                        <a href="mailto:sarveshts2k4@gmail.com" className="text-lg hover:text-pink-500 transition-colors">
+                                        <a href="mailto:sarveshts2k4@gmail.com" className="text-lg hover:text-red-500 transition-colors">
                                             sarveshts2k4@gmail.com
                                         </a>
                                     </div>
                                 </div>
 
                                 <div className="flex items-center space-x-4">
-                                    <div className="w-12 h-12 rounded-full bg-pink-500/20 flex items-center justify-center">
-                                        <i className="fas fa-phone text-pink-500"></i>
+                                    <div className="w-12 h-12 rounded-full bg-red-500/20 flex items-center justify-center">
+                                        <i className="fas fa-phone text-red-500"></i>
                                     </div>
                                     <div>
                                         <p className="text-gray-400">Phone</p>
-                                        <a href="tel:+919880231133" className="text-lg hover:text-pink-500 transition-colors">
+                                        <a href="tel:+919880231133" className="text-lg hover:text-red-500 transition-colors">
                                             +91 988 023 1133
                                         </a>
                                     </div>
                                 </div>
 
                                 <div className="flex items-center space-x-4">
-                                    <div className="w-12 h-12 rounded-full bg-pink-500/20 flex items-center justify-center">
-                                        <i className="fas fa-map-marker-alt text-pink-500"></i>
+                                    <div className="w-12 h-12 rounded-full bg-red-500/20 flex items-center justify-center">
+                                        <i className="fas fa-map-marker-alt text-red-500"></i>
                                     </div>
                                     <div>
                                         <p className="text-gray-400">Location</p>
@@ -79,7 +79,7 @@ export default function Contact() {
                                         href={social.url}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center hover:bg-pink-500 transition-colors duration-300"
+                                        className="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center hover:bg-red-500 transition-colors duration-300"
                                     >
                                         <i className={`fab fa-${social.icon} text-xl`}></i>
                                     </a>
@@ -96,7 +96,7 @@ export default function Contact() {
                                 <input
                                     type="text"
                                     required
-                                    className="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 focus:border-pink-500 focus:ring-pink-500 transition-colors"
+                                    className="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 focus:border-red-500 focus:ring-red-500 transition-colors"
                                     placeholder="Your Name"
                                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                                 />
@@ -107,7 +107,7 @@ export default function Contact() {
                                 <input
                                     type="email"
                                     required
-                                    className="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 focus:border-pink-500 focus:ring-pink-500 transition-colors"
+                                    className="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 focus:border-red-500 focus:ring-red-500 transition-colors"
                                     placeholder="your@email.com"
                                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                                 />

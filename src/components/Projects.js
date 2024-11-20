@@ -76,7 +76,7 @@ export default function Projects() {
               onClick={() => setActiveFilter(filter)}
               className={`px-6 py-2 rounded-full transition-all duration-300 ${
                 activeFilter === filter 
-                  ? 'bg-pink-500 text-white'
+                  ? 'bg-red-500 text-white'
                   : 'bg-gray-800 hover:bg-gray-700'
               }`}
             >
@@ -115,7 +115,7 @@ export default function Projects() {
                   {project.technologies.map((tech) => (
                     <span 
                       key={tech} 
-                      className="px-3 py-1 bg-pink-500/20 rounded-full text-sm"
+                      className="px-3 py-1 bg-red-500/20 rounded-full text-sm"
                     >
                       {tech}
                     </span>

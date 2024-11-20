@@ -54,7 +54,7 @@ export default function Navbar() {
               key={item}
               href={`#${item.toLowerCase()}`}
               className={`nav-link ${
-                activeSection === item.toLowerCase() ? 'text-pink-500' : 'text-white'
+                activeSection === item.toLowerCase() ? 'text-red-500' : 'text-white'
               }`}
             >
               {item}

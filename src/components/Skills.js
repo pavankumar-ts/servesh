@@ -59,7 +59,7 @@ export default function Skills() {
                     <div key={skill.name} className="space-y-2">
                       <div className="flex justify-between">
                         <span>{skill.name}</span>
-                        <span className="text-pink-500">{skill.level}%</span>
+                        <span className="text-red-500">{skill.level}%</span>
                       </div>
                       <div className="skill-bar">
                         <div
@@ -103,12 +103,12 @@ export default function Skills() {
             ].map((cert, index) => (
               <div
                 key={cert.name}
-                className="card hover:border-pink-500 transition-all duration-300 transform hover:-translate-y-2"
+                className="card hover:border-red-500 transition-all duration-300 transform hover:-translate-y-2"
               >
                 <div className="text-4xl mb-4">{cert.icon}</div>
                 <h4 className="text-xl font-semibold mb-2">{cert.name}</h4>
                 <p className="text-gray-400">{cert.issuer}</p>
-                <p className="text-sm text-pink-500 mt-2">{cert.date}</p>
+                <p className="text-sm text-red-500 mt-2">{cert.date}</p>
               </div>
             ))}
           </div>

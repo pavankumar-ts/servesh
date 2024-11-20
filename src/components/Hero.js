@@ -51,7 +51,7 @@ export default function Hero() {
       {/* Background Animation */}
       <div className="absolute inset-0 -z-10">
         <div className="relative w-full h-full">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-pink-600/30 rounded-full filter blur-3xl animate-float" />
+          <div className="absolute top-20 left-10 w-72 h-72 bg-red-600/30 rounded-full filter blur-3xl animate-float" />
           <div className="absolute bottom-20 right-10 w-72 h-72 bg-blue-600/30 rounded-full filter blur-3xl animate-float" style={{ animationDelay: '-1.5s' }} />
         </div>
       </div>
@@ -62,7 +62,7 @@ export default function Hero() {
             Hi, I'm <span className="gradient-text">Sarvesh T S</span>
           </h1>
           <h2 className="text-2xl md:text-3xl mb-6 h-[40px]">
-            I'm a <span className="text-pink-500">{displayText}</span>
+            I'm a <span className="text-red-500">{displayText}</span>
             <span className="animate-pulse">|</span>
           </h2>
           <p className="text-gray-300 mb-8 text-lg">
@@ -99,7 +99,7 @@ export default function Hero() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-12 h-12 rounded-full flex items-center justify-center 
-                  border border-pink-500 hover:bg-pink-500 transition-all duration-300
+                  border border-red-500 hover:bg-red-500 transition-all duration-300
                   transform hover:-translate-y-1 hover:shadow-lg"
               >
                 <i className={`fab fa-${social.icon} text-xl`} style={{ color: social.color }}></i>

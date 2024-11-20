@@ -53,7 +53,7 @@ export default function Footer() {
     <footer className="relative bg-gradient-to-b from-black to-gray-900 pt-20 overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-0 left-1/4 w-72 h-72 bg-pink-600/10 rounded-full filter blur-3xl"></div>
+        <div className="absolute top-0 left-1/4 w-72 h-72 bg-red-600/10 rounded-full filter blur-3xl"></div>
         <div className="absolute bottom-0 right-1/4 w-72 h-72 bg-blue-600/10 rounded-full filter blur-3xl"></div>
       </div>
 
@@ -87,7 +87,7 @@ export default function Footer() {
                 >
                   <div className="w-10 h-10 rounded-full flex items-center justify-center 
                     bg-gray-800 hover:bg-gray-700 transition-all duration-300
-                    group-hover:ring-2 group-hover:ring-pink-500 group-hover:ring-offset-2 
+                    group-hover:ring-2 group-hover:ring-red-500 group-hover:ring-offset-2 
                     group-hover:ring-offset-gray-900"
                   >
                     <i className={`fab fa-${social.icon}`} style={{ color: social.color }}></i>
@@ -110,10 +110,10 @@ export default function Footer() {
                 <li key={link.name}>
                   <Link 
                     href={link.href}
-                    className="text-gray-400 hover:text-pink-500 transition-colors duration-300
+                    className="text-gray-400 hover:text-red-500 transition-colors duration-300
                       flex items-center gap-2 group"
                   >
-                    <span className="w-2 h-2 bg-pink-500 rounded-full transform scale-0 
+                    <span className="w-2 h-2 bg-red-500 rounded-full transform scale-0 
                       group-hover:scale-100 transition-transform"></span>
                     {link.name}
                   </Link>
@@ -130,10 +130,10 @@ export default function Footer() {
                 <li key={service}>
                   <Link 
                     href="#services"
-                    className="text-gray-400 hover:text-pink-500 transition-colors duration-300
+                    className="text-gray-400 hover:text-red-500 transition-colors duration-300
                       flex items-center gap-2 group"
                   >
-                    <span className="w-2 h-2 bg-pink-500 rounded-full transform scale-0 
+                    <span className="w-2 h-2 bg-red-500 rounded-full transform scale-0 
                       group-hover:scale-100 transition-transform"></span>
                     {service}
                   </Link>
@@ -147,41 +147,41 @@ export default function Footer() {
             <h3 className="text-xl font-semibold mb-6">Contact Info</h3>
             <div className="space-y-4">
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-full bg-pink-500/20 flex items-center justify-center mt-1">
-                  <i className="fas fa-envelope text-pink-500"></i>
+                <div className="w-10 h-10 rounded-full bg-red-500/20 flex items-center justify-center mt-1">
+                  <i className="fas fa-envelope text-red-500"></i>
                 </div>
                 <div>
                   <p className="text-gray-400">Email</p>
                   <a 
                     href="mailto:sarveshts2k4@gmail.com"
-                    className="text-white hover:text-pink-500 transition-colors"
+                    className="text-white hover:text-red-500 transition-colors"
                     onMouseEnter={() => setEmailHover(true)}
                     onMouseLeave={() => setEmailHover(false)}
                   >
                     sarveshts2k4@gmail.com
-                    <div className={`h-0.5 bg-pink-500 transition-all duration-300 ${
+                    <div className={`h-0.5 bg-red-500 transition-all duration-300 ${
                       emailHover ? 'w-full' : 'w-0'
                     }`}></div>
                   </a>
                 </div>
               </div>
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-full bg-pink-500/20 flex items-center justify-center mt-1">
-                  <i className="fas fa-phone text-pink-500"></i>
+                <div className="w-10 h-10 rounded-full bg-red-500/20 flex items-center justify-center mt-1">
+                  <i className="fas fa-phone text-red-500"></i>
                 </div>
                 <div>
                   <p className="text-gray-400">Phone</p>
                   <a 
                     href="tel:+919880231133"
-                    className="text-white hover:text-pink-500 transition-colors"
+                    className="text-white hover:text-red-500 transition-colors"
                   >
                     +91 988 023 1133
                   </a>
                 </div>
               </div>
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-full bg-pink-500/20 flex items-center justify-center mt-1">
-                  <i className="fas fa-map-marker-alt text-pink-500"></i>
+                <div className="w-10 h-10 rounded-full bg-red-500/20 flex items-center justify-center mt-1">
+                  <i className="fas fa-map-marker-alt text-red-500"></i>
                 </div>
                 <div>
                   <p className="text-gray-400">Location</p>
@@ -204,7 +204,7 @@ export default function Footer() {
                 type="email"
                 placeholder="Enter your email"
                 className="w-full md:w-80 px-4 py-2 bg-gray-800 rounded-lg focus:outline-none 
-                  focus:ring-2 focus:ring-pink-500 transition-all"
+                  focus:ring-2 focus:ring-red-500 transition-all"
               />
               <button className="button-primary whitespace-nowrap">
                 Subscribe

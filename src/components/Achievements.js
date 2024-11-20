@@ -67,7 +67,7 @@ export default function Achievements() {
               onClick={() => setActiveTab(tab)}
               className={`px-6 py-2 rounded-full transition-all duration-300 ${
                 activeTab === tab 
-                  ? 'bg-pink-500 text-white'
+                  ? 'bg-red-500 text-white'
                   : 'bg-gray-800 hover:bg-gray-700'
               }`}
             >
@@ -80,7 +80,7 @@ export default function Achievements() {
         {activeTab === 'certifications' && (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {achievements.certifications.map((cert, index) => (
-              <div key={index} className="card hover:border-pink-500 group">
+              <div key={index} className="card hover:border-red-500 group">
                 <div className="relative h-48 mb-4 overflow-hidden rounded-lg">
                   <Image
                     src={cert.image}
@@ -91,7 +91,7 @@ export default function Achievements() {
                 </div>
                 <h3 className="text-xl font-semibold mb-2">{cert.title}</h3>
                 <p className="text-gray-400 mb-2">{cert.issuer}</p>
-                <p className="text-pink-500 text-sm mb-4">{cert.date}</p>
+                <p className="text-red-500 text-sm mb-4">{cert.date}</p>
                 <div className="flex flex-wrap gap-2">
                   {cert.skills.map((skill, i) => (
                     <span 
@@ -113,14 +113,14 @@ export default function Achievements() {
             {achievements.awards.map((award, index) => (
               <div 
                 key={index}
-                className="card hover:border-pink-500 text-center p-8"
+                className="card hover:border-red-500 text-center p-8"
               >
-                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-pink-500/20 flex items-center justify-center">
-                  <i className="fas fa-trophy text-2xl text-pink-500"></i>
+                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-red-500/20 flex items-center justify-center">
+                  <i className="fas fa-trophy text-2xl text-red-500"></i>
                 </div>
                 <h3 className="text-xl font-semibold mb-2">{award.title}</h3>
                 <p className="text-gray-400 mb-2">{award.event}</p>
-                <p className="text-pink-500 text-sm mb-4">{award.date}</p>
+                <p className="text-red-500 text-sm mb-4">{award.date}</p>
                 <p className="text-gray-300">{award.description}</p>
               </div>
             ))}
@@ -133,12 +133,12 @@ export default function Achievements() {
             {achievements.publications.map((pub, index) => (
               <div 
                 key={index}
-                className="card hover:border-pink-500 flex items-center justify-between"
+                className="card hover:border-red-500 flex items-center justify-between"
               >
                 <div>
                   <h3 className="text-xl font-semibold mb-2">{pub.title}</h3>
                   <p className="text-gray-400">{pub.publisher}</p>
-                  <p className="text-pink-500 text-sm">{pub.date}</p>
+                  <p className="text-red-500 text-sm">{pub.date}</p>
                 </div>
                 <a 
                   href={pub.link}

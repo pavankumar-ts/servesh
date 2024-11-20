@@ -7,7 +7,7 @@
   --secondary: #00f2fe;
   --dark: #080808;
   --card-bg: #262626;
-  --gradient: linear-gradient(45deg, #ff004f, #00f2fe);
+  --gradient: linear-gradient(45deg, #ff0000, #00f2fe);
 }
 
 @layer base {
@@ -20,7 +20,7 @@
   }
 
   ::selection {
-    @apply bg-pink-600 text-white;
+    @apply bg-red-600 text-white;
   }
 }
 
@@ -212,7 +212,7 @@
 
 /* Timeline Styles */
 .timeline {
-  @apply relative pl-8 border-l-2 border-pink-600;
+  @apply relative pl-8 border-l-2 border-red-600;
 }
 
 .timeline-item {
@@ -221,7 +221,7 @@
 
 .timeline-item::before {
   content: '';
-  @apply absolute -left-[33px] w-4 h-4 rounded-full bg-pink-600;
+  @apply absolute -left-[33px] w-4 h-4 rounded-full bg-red-600;
 }
 
 .timeline-item:hover::before {

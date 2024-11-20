@@ -1,17 +1,23 @@
 'use client'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
 export default function About() {
   const [activeTab, setActiveTab] = useState('skills')
   const [isVisible, setIsVisible] = useState(false)
+  const sectionRef = useRef(null)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => setIsVisible(entry.isIntersecting)
+      ([entry]) => setIsVisible(entry.isIntersecting),
+      { threshold: 0.1 }
     )
-    observer.observe(document.getElementById('about'))
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current)
+    }
+
     return () => observer.disconnect()
   }, [])
 
@@ -62,116 +68,122 @@ export default function About() {
 
   return (
     <section 
-      id="about" 
-      className="py-20 relative overflow-hidden"
-    >
-      {/* Background Elements */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-900 to-black opacity-50"></div>
-      <div className="absolute inset-0">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-pink-600/10 rounded-full filter blur-3xl animate-float"></div>
-        <div className="absolute bottom-20 right-10 w-72 h-72 bg-blue-600/10 rounded-full filter blur-3xl animate-float" style={{ animationDelay: '-2s' }}></div>
-      </div>
+    ref={sectionRef}
+    id="about" 
+    className="py-24 relative overflow-hidden"
+  >
+    {/* Background Elements */}
+    <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-900 to-black opacity-50"></div>
+    <div className="absolute inset-0">
+      <div className="absolute top-20 left-10 w-72 h-72 bg-red-600/10 rounded-full filter blur-3xl animate-float"></div>
+      <div className="absolute bottom-20 right-10 w-72 h-72 bg-blue-600/10 rounded-full filter blur-3xl animate-float" style={{ animationDelay: '-2s' }}></div>
+    </div>
 
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="flex flex-col lg:flex-row gap-12 items-center">
-          {/* Image Column */}
-          <div className="lg:w-1/3">
-            <div className={`relative group transition-all duration-700 ${
-              isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-20'
-            }`}>
-              <div className="relative w-full aspect-square rounded-2xl overflow-hidden">
-                <Image 
-                  src="/images/user.jpg" 
-                  alt="Profile"
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                {/* Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-              </div>
-              
-              {/* Floating Info Cards */}
-              <div className="absolute -right-10 top-10 glass p-3 rounded-lg shadow-xl animate-float">
-                <div className="flex items-center gap-2">
-                  <div className="w-8 h-8 rounded-full bg-pink-500 flex items-center justify-center">
-                    <span className="text-xl">🎯</span>
-                  </div>
-                  <div>
-                    <p className="text-sm font-medium">Security Expert</p>
-                    <p className="text-xs text-gray-400">Passionate Learner</p>
-                  </div>
+    {/* Main Content */}
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="flex flex-col lg:flex-row lg:items-start gap-16">
+        {/* Image Column */}
+        <div className="lg:w-2/5 flex justify-center lg:sticky lg:top-24">
+          <div className={`relative max-w-md w-full transition-all duration-700 ${
+            isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-20'
+          }`}>
+            {/* Profile Image Container */}
+            <div className="relative aspect-square rounded-2xl overflow-hidden">
+              <Image 
+                src="/images/user.jpg" 
+                alt="Profile"
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-110"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+            </div>
+            
+            {/* Floating Cards */}
+            <div className="absolute -right-4 top-10 glass p-3 rounded-lg shadow-xl animate-float">
+              <div className="flex items-center gap-2">
+                <div className="w-8 h-8 rounded-full bg-red-500/20 flex items-center justify-center">
+                  <span className="text-xl">🎯</span>
+                </div>
+                <div>
+                  <p className="text-sm font-medium">Security Expert</p>
+                  <p className="text-xs text-gray-400">Passionate Learner</p>
                 </div>
               </div>
+            </div>
 
-              <div className="absolute -left-10 bottom-10 glass p-3 rounded-lg shadow-xl animate-float" style={{ animationDelay: '-1.5s' }}>
-                <div className="flex items-center gap-2">
-                  <div className="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center">
-                    <span className="text-xl">💻</span>
-                  </div>
-                  <div>
-                    <p className="text-sm font-medium">Tech Enthusiast</p>
-                    <p className="text-xs text-gray-400">Problem Solver</p>
-                  </div>
+            <div className="absolute -left-4 bottom-10 glass p-3 rounded-lg shadow-xl animate-float" style={{ animationDelay: '-1.5s' }}>
+              <div className="flex items-center gap-2">
+                <div className="w-8 h-8 rounded-full bg-blue-500/20 flex items-center justify-center">
+                  <span className="text-xl">💻</span>
+                </div>
+                <div>
+                  <p className="text-sm font-medium">Tech Enthusiast</p>
+                  <p className="text-xs text-gray-400">Problem Solver</p>
                 </div>
               </div>
             </div>
           </div>
+        </div>
 
-          {/* Content Column */}
-          <div className="lg:w-2/3">
-            <div className={`transition-all duration-700 ${
-              isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-20'
-            }`}>
-              <h2 className="text-4xl font-bold mb-6">
-                About <span className="gradient-text">Me</span>
-              </h2>
-              
-              <p className="text-gray-300 text-lg mb-8 leading-relaxed">
-                Results-driven cybersecurity enthusiast with a robust foundation in cybersecurity fundamentals, 
-                poised to elevate expertise and make impactful contributions to the field. Adept at collaborative 
-                problem-solving and eager to learn from seasoned professionals, demonstrating a commitment to 
-                ongoing professional development.
-              </p>
+        {/* Content Column */}
+        <div className="lg:w-3/5">
+          <div className={`transition-all duration-700 ${
+            isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-20'
+          }`}>
+            <h2 className="text-4xl font-bold mb-8">
+              About <span className="gradient-text">Me</span>
+            </h2>
+            
+            <p className="text-gray-300 text-lg mb-10 leading-relaxed">
+              Results-driven cybersecurity enthusiast with a robust foundation in cybersecurity fundamentals, 
+              poised to elevate expertise and make impactful contributions to the field. Adept at collaborative 
+              problem-solving and eager to learn from seasoned professionals.
+            </p>
 
-              {/* Tab Navigation */}
-              <div className="flex space-x-1 mb-8 bg-gray-800/50 p-1 rounded-lg backdrop-blur-sm">
+            {/* Tab Navigation */}
+            <div className="bg-gray-800/50 p-1.5 rounded-lg backdrop-blur-sm mb-10">
+              <div className="flex gap-2">
                 {['Skills', 'Experience', 'Education'].map((tab) => (
                   <button
                     key={tab}
                     onClick={() => setActiveTab(tab.toLowerCase())}
-                    className={`flex-1 px-4 py-2 rounded-md transition-all duration-300 ${
-                      activeTab === tab.toLowerCase()
-                        ? 'bg-pink-500 text-white shadow-lg'
+                    className={`flex-1 px-6 py-3 rounded-md text-sm font-medium transition-all duration-300
+                      ${activeTab === tab.toLowerCase()
+                        ? 'bg-red-500 text-white shadow-lg'
                         : 'hover:bg-gray-700/50 text-gray-400'
-                    }`}
+                      }`}
                   >
                     {tab}
                   </button>
                 ))}
               </div>
+            </div>
 
-              {/* Tab Content */}
-              <div className="min-h-[300px] relative">
-                {/* Skills Tab */}
-                <div className={`transition-all duration-500 absolute w-full ${
-                  activeTab === 'skills' 
-                    ? 'opacity-100 translate-x-0' 
-                    : 'opacity-0 translate-x-20 pointer-events-none'
-                }`}>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    {tabContent.skills.map((skill, index) => (
-                      <div 
-                        key={index}
-                        className="card hover:border-pink-500 transition-all duration-300"
-                      >
-                        <h3 className="text-lg font-semibold text-pink-500 mb-2">
-                          {skill.category}
-                        </h3>
-                        <p className="text-gray-400">{skill.items}</p>
-                      </div>
-                    ))}
-                  </div>
+            {/* Tab Content */}
+            <div className="min-h-[400px] relative mb-10">
+              {/* Skills Tab */}
+              <div className={`transition-all duration-500 absolute w-full 
+                ${activeTab === 'skills' 
+                  ? 'opacity-100 translate-x-0' 
+                  : 'opacity-0 translate-x-20 pointer-events-none'
+                }`}
+              >
+                <div className="grid sm:grid-cols-2 gap-6">
+                  {tabContent.skills.map((skill, index) => (
+                    <div 
+                      key={index}
+                      className="bg-gray-800/50 p-6 rounded-xl hover:border-red-500 
+                        border border-transparent transition-all duration-300"
+                    >
+                      <h3 className="text-lg font-semibold text-red-500 mb-3">
+                        {skill.category}
+                      </h3>
+                      <p className="text-gray-400 leading-relaxed">{skill.items}</p>
+                    </div>
+                  ))}
                 </div>
+              </div>
 
                 {/* Experience Tab */}
                 <div className={`transition-all duration-500 absolute w-full ${
@@ -183,15 +195,15 @@ export default function About() {
                     {tabContent.experience.map((exp, index) => (
                       <div 
                         key={index}
-                        className="card hover:border-pink-500 transition-all duration-300"
+                        className="card hover:border-red-500 transition-all duration-300"
                       >
                         <h3 className="text-xl font-semibold mb-1">{exp.role}</h3>
-                        <p className="text-pink-500 mb-2">{exp.company}</p>
+                        <p className="text-red-500 mb-2">{exp.company}</p>
                         <p className="text-gray-400 text-sm mb-4">{exp.period}</p>
                         <ul className="space-y-2">
                           {exp.highlights.map((highlight, i) => (
                             <li key={i} className="flex items-center gap-2 text-gray-300">
-                              <span className="w-1.5 h-1.5 bg-pink-500 rounded-full"></span>
+                              <span className="w-1.5 h-1.5 bg-red-500 rounded-full"></span>
                               {highlight}
                             </li>
                           ))}
@@ -211,10 +223,10 @@ export default function About() {
                     {tabContent.education.map((edu, index) => (
                       <div 
                         key={index}
-                        className="card hover:border-pink-500 transition-all duration-300"
+                        className="card hover:border-red-500 transition-all duration-300"
                       >
                         <h3 className="text-xl font-semibold mb-1">{edu.degree}</h3>
-                        <p className="text-pink-500 mb-2">{edu.institution}</p>
+                        <p className="text-red-500 mb-2">{edu.institution}</p>
                         <p className="text-gray-400 text-sm mb-4">{edu.period}</p>
                         <p className="text-gray-300">{edu.details}</p>
                       </div>
@@ -224,17 +236,19 @@ export default function About() {
               </div>
 
               {/* Action Buttons */}
-              <div className="mt-12 flex flex-wrap gap-4">
+              <div className="flex flex-wrap gap-4">
                 <Link 
                   href="/resume.pdf" 
-                  className="button-primary"
+                  className="px-8 py-3 bg-red-500 hover:bg-red-600 rounded-full font-medium
+                    transition-all duration-300 hover:shadow-lg hover:shadow-red-500/25"
                   download
                 >
                   Download CV
                 </Link>
                 <Link 
                   href="#contact" 
-                  className="button-outline"
+                  className="px-8 py-3 border border-red-500 rounded-full font-medium
+                    transition-all duration-300 hover:bg-red-500 hover:shadow-lg hover:shadow-red-500/25"
                 >
                   Let's Talk
                 </Link>

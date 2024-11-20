@@ -14,7 +14,7 @@ import Footer from '@/components/Footer'
 const LoadingScreen = () => (
   <div className="fixed inset-0 bg-black z-50 flex items-center justify-center">
     <div className="text-center">
-      <div className="w-16 h-16 border-4 border-pink-500 border-t-transparent rounded-full animate-spin mb-4"></div>
+      <div className="w-16 h-16 border-4 border-red-500 border-t-transparent rounded-full animate-spin mb-4"></div>
       <div className="text-2xl font-bold gradient-text">Loading...</div>
     </div>
   </div>
@@ -39,7 +39,7 @@ export default function Home() {
       ) : (
         <main className="bg-[#080808] text-white relative">
           {/* Background Gradient */}
-          <div className="fixed inset-0 bg-gradient-to-br from-pink-500/10 via-transparent to-blue-500/10 pointer-events-none"></div>
+          <div className="fixed inset-0 bg-gradient-to-br from-red-500/10 via-transparent to-blue-500/10 pointer-events-none"></div>
           
           {/* Animated Particles Background */}
           <div className="fixed inset-0 pointer-events-none">
@@ -112,7 +112,7 @@ export default function Home() {
           {/* Scroll to Top Button */}
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="fixed bottom-8 right-8 w-12 h-12 bg-pink-500 rounded-full flex items-center justify-center text-white shadow-lg hover:bg-pink-600 transition-all duration-300 z-50 group"
+            className="fixed bottom-8 right-8 w-12 h-12 bg-red-500 rounded-full flex items-center justify-center text-white shadow-lg hover:bg-red-600 transition-all duration-300 z-50 group"
           >
             <svg
               className="w-6 h-6 transform group-hover:-translate-y-1 transition-transform duration-300"

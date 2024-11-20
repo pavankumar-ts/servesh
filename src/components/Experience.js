@@ -36,7 +36,7 @@ export default function Experience() {
         'Conducted Hackathons and Capture the Flag competitions'
       ],
       icon: '🔒',
-      color: 'pink'
+      color: 'red'
     },
     {
       title: 'Security Intern',
@@ -79,7 +79,7 @@ export default function Experience() {
     >
       {/* Background Elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-0 left-1/4 w-72 h-72 bg-pink-600/10 rounded-full filter blur-3xl"></div>
+        <div className="absolute top-0 left-1/4 w-72 h-72 bg-red-600/10 rounded-full filter blur-3xl"></div>
         <div className="absolute bottom-0 right-1/4 w-72 h-72 bg-blue-600/10 rounded-full filter blur-3xl"></div>
       </div>
 
@@ -102,7 +102,7 @@ export default function Experience() {
               }`}
               style={{ transitionDelay: `${index * 200}ms` }}
             >
-              <div className="card group hover:border-pink-500">
+              <div className="card group hover:border-red-500">
                 <div className="flex flex-col md:flex-row gap-6">
                   {/* Icon */}
                   <div className={`w-16 h-16 rounded-full bg-${exp.color}-500/20 
@@ -114,12 +114,12 @@ export default function Experience() {
 
                   {/* Content */}
                   <div className="flex-1">
-                    <h3 className="text-xl font-semibold group-hover:text-pink-500 
+                    <h3 className="text-xl font-semibold group-hover:text-red-500 
                       transition-colors duration-300"
                     >
                       {exp.title}
                     </h3>
-                    <p className="text-pink-500 mb-2">{exp.company}</p>
+                    <p className="text-red-500 mb-2">{exp.company}</p>
                     <p className="text-gray-400 text-sm mb-4">{exp.duration}</p>
                     
                     <ul className="space-y-2">
@@ -129,7 +129,7 @@ export default function Experience() {
                           className="flex items-center gap-2 text-gray-300
                             hover:text-white transition-colors duration-300"
                         >
-                          <span className="w-1.5 h-1.5 bg-pink-500 rounded-full"></span>
+                          <span className="w-1.5 h-1.5 bg-red-500 rounded-full"></span>
                           {item}
                         </li>
                       ))}
