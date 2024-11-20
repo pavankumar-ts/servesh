@@ -90,7 +90,7 @@ export default function About() {
             {/* Profile Image Container */}
             <div className="relative aspect-square rounded-2xl overflow-hidden">
               <Image 
-                src="/images/user.jpg" 
+                src="/images/user.JPG" 
                 alt="Profile"
                 width={1000}
                 height={1000}
